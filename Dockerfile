@@ -8,8 +8,12 @@ RUN yum install -y gcc gcc-c++ make patch sudo unzip perl zlib automake libtool 
     zlib-devel bzip2 bzip2-devel libxml2-devel \
     tcl cmake
 
-# Libs path for srt(depends on ssl) and ffmpeg(depends on serval libs).
-ENV PKG_CONFIG_PATH /usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/local/ssl/lib/pkgconfig
+# Libs path for app which depends on ssl, such as libsrt.
+ENV PKG_CONFIG_PATH $PKG_CONFIG_PATH:/usr/local/ssl/lib/pkgconfig
+
+# Libs path for FFmpeg(depends on serval libs), or it fail with:
+#       ERROR: speex not found using pkg-config
+ENV PKG_CONFIG_PATH $PKG_CONFIG_PATH:/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig
 
 # Openssl 1.1.* for SRS.
 # ADD openssl-1.1.1j.tar.bz2 /tmp
