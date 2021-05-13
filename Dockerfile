@@ -66,6 +66,7 @@ WORKDIR /tmp/srs
 COPY --from=build /usr/local/bin/ffmpeg /usr/local/bin/ffmpeg
 COPY --from=build /usr/local/ssl /usr/local/ssl
 COPY --from=build /usr/local/include/srt /usr/local/include/srt
+COPY --from=build /usr/local/lib64 /usr/local/lib64
 RUN cd /usr/local/lib64 && ln -sf libsrt.so.1.4.1 libsrt.so.1 && ln -sf libsrt.so.1 libsrt.so
 
 # Note that git is very important for codecov to discover the .codecov.yml
