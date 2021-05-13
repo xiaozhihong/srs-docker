@@ -33,4 +33,6 @@ After build, the binary file `./objs/srs` is generated.
 
 > Remark: Recomment to use [registry.cn-hangzhou.aliyuncs.com/ossrs/srs:srt](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/srs/images) to speed-up.
 
+**>>> Run SRS, read [#1147](https://github.com/ossrs/srs/issues/1147#issuecomment-577951899)**
+
 Winlin, 2021.03
